@@ -72,15 +72,12 @@ const userSchema = new Schema<IUser, UserModel>(
     presentLocation: {
       address: {
         type: String,
-        required: true,
       },
       latitude: {
         type: Number,
-        required: true,
       },
       longitude: {
         type: Number,
-        required: true,
       },
     },
     rating: {
