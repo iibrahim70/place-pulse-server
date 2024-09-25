@@ -9,7 +9,6 @@ import QueryBuilder from '../../builder/QueryBuilder';
 import { Property } from '../Property/property.model';
 import { User } from '../User/user.model';
 import getPathAfterUploads from '../../helpers/getPathAfterUploads';
-import mongoose from 'mongoose';
 import { Booking } from '../Booking/booking.model';
 
 const createFeedbackToDB = async (
@@ -17,7 +16,7 @@ const createFeedbackToDB = async (
   payload: IFeedback,
   file: any,
 ) => {
-  const session = await mongoose.startSession();
+  
 
   // Check if the property with the provided propertyId exists
   const existingProperty = await Property.findById(payload?.propertyId);
@@ -44,7 +43,7 @@ const createFeedbackToDB = async (
     );
   }
 
-  try {
+ 
     // Add userId from the JWT payload to the feedback
     payload.userId = user?.userId;
     payload.visibilityStatus = 'hide'; // Set default visibility status
@@ -86,14 +85,7 @@ const createFeedbackToDB = async (
     });
 
     return feedback;
-  } catch (error) {
-    // Abort the transaction in case of an error
-    await session.abortTransaction();
-    await session.endSession();
-
-    // Re-throw the error to be handled by the caller
-    throw error;
-  }
+  
 };
 
 const getAllFeedbacksFromDB = async (query: Record<string, unknown>) => {
