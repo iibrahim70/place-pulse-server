@@ -9,7 +9,7 @@ router
   .route('/')
 
   .get(
-    validateAuth(USER_ROLE.ADMIN, USER_ROLE['SUPER-ADMIN']),
+    validateAuth(USER_ROLE.USER, USER_ROLE.ADMIN, USER_ROLE['SUPER-ADMIN']),
     ConversationControllers.getConversationsByUserId,
   )
 
