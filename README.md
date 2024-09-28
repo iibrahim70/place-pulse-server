@@ -105,28 +105,39 @@ For detailed information on the available API endpoints and their usage, please 
     - Define the following variables:
 
     ```bash
-   PORT=5000
-   IP_ADDRESS=your_ip_address
-   NODE_ENV=development
-   CORS_ORIGIN=http://your_local_host_url
-   DATABASE_URL=mongodb://username:password@host:port/database
-   COLLECTION_NAME=myDatabase
-   BCRYPT_SALT_ROUNDS=10
-   JWT_ACCESS_SECRET=your_access_secret
-   JWT_REFRESH_SECRET=your_refresh_secret
-   JWT_ACCESS_EXPIRES_IN=1d
-   JWT_REFRESH_EXPIRES_IN=30d
-   SUPER_ADMIN_FULLNAME=your_super_admin_name
-   SUPER_ADMIN_EMAIL=your_super_admin_email
-   SUPER_ADMIN_PASSWORD=your_super_admin_password
-   SUPER_ADMIN_ROLE=SUPER-ADMIN
-   SUPER_ADMIN_IS_VERIFIED=true
-   SUPER_ADMIN_STATUS=active
-   SMTP_EMAIL_USER=your_smtp_user
-   SMTP_EMAIL_PASS=your_smtp_password
-   GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-   STRIPE_SECRET_KEY=your_stripe_secret_key
-   STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+      # Server Config
+      PORT=                 # Server port
+      IP_ADDRESS=           # Server IP address
+      NODE_ENV=             # Environment (development/production)
+      CORS_ORIGIN=          # Allowed CORS origins (comma-separated list)
+
+      # Database Config
+      DATABASE_URL=         # MongoDB connection string
+      COLLECTION_NAME=      # Database name
+
+      # Security & JWT
+      BCRYPT_SALT_ROUNDS=   # Salt rounds for bcrypt (e.g., 10)
+      JWT_ACCESS_SECRET=    # Secret for JWT access token
+      JWT_REFRESH_SECRET=   # Secret for JWT refresh token
+      JWT_ACCESS_EXPIRES_IN= # JWT access token expiry (e.g., 1d)
+      JWT_REFRESH_EXPIRES_IN= # JWT refresh token expiry (e.g., 30d)
+
+      # Super Admin
+      SUPER_ADMIN_FULLNAME= # Full name of the super admin
+      SUPER_ADMIN_EMAIL=    # Super admin email
+      SUPER_ADMIN_PASSWORD= # Super admin password
+      SUPER_ADMIN_ROLE=     # Super admin role (e.g., SUPER-ADMIN)
+      SUPER_ADMIN_IS_VERIFIED= # Super admin verified status (true/false)
+      SUPER_ADMIN_STATUS=   # Super admin status (e.g., active)
+
+      # SMTP Config
+      SMTP_EMAIL_USER=      # SMTP username
+      SMTP_EMAIL_PASS=      # SMTP password
+
+      # API Keys
+      GOOGLE_MAPS_API_KEY=  # Google Maps API key
+      STRIPE_SECRET_KEY=    # Stripe secret key
+      STRIPE_WEBHOOK_SECRET= # Stripe webhook secret key
     ```
 
 3. Run the server:
@@ -135,7 +146,7 @@ For detailed information on the available API endpoints and their usage, please 
     pnpm start:dev
     ```
 
-The server will start running at http://your_ip_address:5000
+The server will start running at http://your_ip_address:your_port
 
 ## Contributing
 
