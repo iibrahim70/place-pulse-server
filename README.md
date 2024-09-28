@@ -88,7 +88,7 @@ For detailed information on the available API endpoints and their usage, please 
 2. Navigate to the project directory:
 
     ```bash
-    cd givers-heaven-server
+    cd place-pulse-server
     ```
 
 ### Running the Server
